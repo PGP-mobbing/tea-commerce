@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <h1>TEA COMMERCE</h1>
       <h3>Lorem Ipsum</h3>
-      <Link href="/tea" >
+      <Link href="/teas" >
       <a>Get your tea</a>
       </Link>
      
