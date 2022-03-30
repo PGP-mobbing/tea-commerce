@@ -1,5 +1,6 @@
 import { sanityClient, urlFor } from "../../sanity";
 import Image from "next/image";
+import styles from "../../styles/Teas.module.css";
 
 const Tea = ({ props }) => {
 

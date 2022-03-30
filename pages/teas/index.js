@@ -1,11 +1,12 @@
-import { sanityClient, urlFor } from '../../sanity'
-import TeaCard from '../../components/TeaCard.jsx'
+import { sanityClient, urlFor } from '../../sanity';
+import TeaCard from '../../components/TeaCard.jsx';
+import styles from "../../styles/Teas.module.css";
 
 const Teas = ({properties}) => {
   return (
-    <div>
+    <div className={styles.container}>
       <h1>Teas</h1>
-      <div>{properties.map((property, i) => <TeaCard key={i} response={property} />)}</div>
+      <div className={styles.teas_container}>{properties.map((property, i) => <TeaCard key={i} response={property} />)}</div>
     </div>
   )
 }

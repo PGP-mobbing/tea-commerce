@@ -4,13 +4,15 @@ import Image from 'next/image';
 const Navbar = () => {
   return (
     <nav>
-      <Image src="/logo.png" width={128} height={72} alt="" />
+      {/* <Image src="/logo.png" width={128} height={72} alt="" /> */}
       <div className="logo">
-        <h1>TEA COMMERCE</h1>
+        <p>TEA-COMMERCE</p>
       </div>
-      <Link href="/"><a>Home</a></Link>
-      <Link href="/about"><a>About</a></Link>
-      <Link href="/teas"><a>Tea Shop</a></Link>
+      <div className="nav-links">
+        <Link href="/"><a>Home</a></Link>
+        <Link href="/about"><a>About</a></Link>
+        <Link href="/teas"><a>Tea Shop</a></Link>
+      </div>
     </nav>
   );
 }
