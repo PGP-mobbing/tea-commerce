@@ -5,7 +5,7 @@ import styles from "../../styles/Teas.module.css";
 const Tea = ({ props }) => {
 
   return (
-    <div>
+    <div className={styles.tea_container}>
       <h1>{props.title}</h1>
       <Image src={urlFor(props.image).url()} alt="" width={100} height={100} />
       <p>{props.tagline}</p>
