@@ -12,14 +12,14 @@ const store = (set)=>({
         if (itemIndex === -1) {
           state.cartItems.push({...item, quantity: 1});
         } else {
-          state.cartItems[itemIndex].quantity += 1;
+          state.cartItems[itemIndex].quantity ++;
         }
       }
     })
   },
   removeFromCart : (item)=>{
     set(state => ({
-      cartItems : state.cartItems.filter(cartItem => cartItem.id !== item.id)
+      cartItems : state.cartItems.filter(cartItem => cartItem !== item)
     }))
   }
 })
