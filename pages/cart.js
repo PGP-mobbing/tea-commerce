@@ -5,7 +5,7 @@ const Cart = () => {
   const cartItems = useStore((state) => state.cartItems);
   const removeFromCart = useStore((state) => state.removeFromCart);
   const addToCart = useStore((state) => state.addToCart);
-  const [rerender, setRerender] = useState(false);
+  const [rehydrate, setRehydrate] = useState(false);
 
   return (
     <div>
@@ -24,7 +24,7 @@ const Cart = () => {
                     e.preventDefault();
                     e.stopPropagation();
                     addToCart(item);
-                    setRerender(!rerender);
+                    setRehydrate(!rehydrate);
                   }
                 }
                 >+</button>
