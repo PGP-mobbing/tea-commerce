@@ -6,6 +6,7 @@ const Cart = () => {
   const removeFromCart = useStore((state) => state.removeFromCart);
   const addToCart = useStore((state) => state.addToCart);
   const subtractFromQuantity = useStore((state) => state.subtractFromQuantity);
+  const clearCart = useStore((state) => state.clearCart);
   const [rehydrate, setRehydrate] = useState(false);
 
   return (
@@ -18,26 +19,26 @@ const Cart = () => {
               <div>{item.title}</div>
               <div>
                 <button
-                onClick={
-                  (e) => {
+                  onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     subtractFromQuantity(item);
                     setRehydrate(!rehydrate);
-                  }
-                }
-                >-</button>
-                { item.quantity}
+                  }}
+                >
+                  -
+                </button>
+                {item.quantity}
                 <button
-                onClick={
-                  (e) => {
+                  onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     addToCart(item);
                     setRehydrate(!rehydrate);
-                  }
-                }
-                >+</button>
+                  }}
+                >
+                  +
+                </button>
               </div>
               <button
                 onClick={(e) => {
@@ -48,10 +49,20 @@ const Cart = () => {
               >
                 Remove
               </button>
-              
             </div>
           );
         })}
+        {cartItems.length > 0 &&
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            clearCart();
+          }}
+        >
+          Clear
+        </button>
+        }
       </div>
     </div>
   );

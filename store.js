@@ -31,6 +31,9 @@ const store = (set) => ({
         }
       }
     });
+  },
+  clearCart: () => {
+    set((state) => ({ cartItems: [] }));
   }
 });
 
