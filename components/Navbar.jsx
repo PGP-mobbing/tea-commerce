@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import useStore from '../store';
 
 const Navbar = () => {
+  const cartItems = useStore((state) => state.cartItems.length);
+
   return (
     <nav>
-      {/* <Image src="/logo.png" width={128} height={72} alt="" /> */}
       <div className="logo">
         <p>TEA-COMMERCE</p>
       </div>
@@ -12,6 +14,7 @@ const Navbar = () => {
         <Link href="/"><a>Home</a></Link>
         <Link href="/about"><a>About</a></Link>
         <Link href="/teas"><a>Tea Shop</a></Link>
+        <Link href="/cart"><a>Cart<p>{cartItems}</p></a></Link>
       </div>
     </nav>
   );
