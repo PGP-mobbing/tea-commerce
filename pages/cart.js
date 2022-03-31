@@ -5,6 +5,7 @@ const Cart = () => {
   const cartItems = useStore((state) => state.cartItems);
   const removeFromCart = useStore((state) => state.removeFromCart);
   const addToCart = useStore((state) => state.addToCart);
+  const subtractFromQuantity = useStore((state) => state.subtractFromQuantity);
   const [rehydrate, setRehydrate] = useState(false);
 
   return (
@@ -16,7 +17,16 @@ const Cart = () => {
             <div key={i}>
               <div>{item.title}</div>
               <div>
-                <button>-</button>
+                <button
+                onClick={
+                  (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    subtractFromQuantity(item);
+                    setRehydrate(!rehydrate);
+                  }
+                }
+                >-</button>
                 { item.quantity}
                 <button
                 onClick={
@@ -36,7 +46,7 @@ const Cart = () => {
                   removeFromCart(item);
                 }}
               >
-                Remove from cart
+                Remove
               </button>
               
             </div>
