@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 
 const Navbar = () => {
 
@@ -12,7 +11,7 @@ const Navbar = () => {
         <Link href="/"><a>Home</a></Link>
         <Link href="/about"><a>About</a></Link>
         <Link href="/teas"><a>Tea Shop</a></Link>
-        <Link href="/cart"><a>Cart ()</a></Link>
+        {/* <Link href="/cart"><a>Cart ()</a></Link> */}
       </div>
     </nav>
   );
