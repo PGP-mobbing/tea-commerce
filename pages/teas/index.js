@@ -7,13 +7,13 @@ import TeaCard from '../../components/TeaCard';
 import styles from "../../styles/Teas.module.css";
 
 const Teas = ({products}) => {
- 
+  
   return (
     <div className={styles.container}>
       <h1>Teas</h1>
       <Cart className={styles.teas_container}>
         {products.map((product, i) => <TeaCard key={i} product={product} />)}
-        {/* <CartSummary /> */}
+        <CartSummary />
       </Cart>
     </div>
   )

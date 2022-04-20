@@ -21,11 +21,13 @@ const CartSummary = () => {
   const handleCheckout = async (event) => {
     event.preventDefault();
     setLoading(true);
+
   //send the cart data to our serverless API
     const response = await fetchPostJSON(
       "/api/checkout_sessions/cart",
       cartDetails
     );
+
 
     if (response.statusCode === 500) {
       console.error(response.message);
