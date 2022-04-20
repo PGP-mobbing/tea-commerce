@@ -1,7 +1,7 @@
  import { sanityClient } from '../../lib/sanity/client';
 
 import Cart from "../../components/Cart";
-// import CartSummary from "../../components/CartSummary";
+import CartSummary from "../../components/CartSummary";
 
 import TeaCard from '../../components/TeaCard';
 import styles from "../../styles/Teas.module.css";
