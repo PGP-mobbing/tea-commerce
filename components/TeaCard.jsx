@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { urlFor } from "../sanity";
+import { urlFor } from "../lib/sanity/client";
 import styles from "../styles/Teas.module.css";
-import useStore from "../store";
 
 const TeaCard = ({ response }) => {
-  const addToCart = useStore((state) => state.addToCart);
 
   return (
     <div className={styles.tea_card}>

@@ -1,4 +1,3 @@
-import useStore from "../store";
 import { useEffect, useState } from "react";
 
 const Cart = () => {

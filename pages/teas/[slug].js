@@ -1,4 +1,4 @@
-import { sanityClient, urlFor } from "../../sanity";
+import { sanityClient, urlFor } from "../../lib/sanity/client";
 import Image from "next/image";
 import styles from "../../styles/Teas.module.css";
 

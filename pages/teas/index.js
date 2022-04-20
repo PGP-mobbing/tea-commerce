@@ -1,4 +1,4 @@
-import { sanityClient, urlFor } from '../../lib/sanity';
+import { sanityClient, urlFor } from '../../lib/sanity/client';
 import TeaCard from '../../components/TeaCard.jsx';
 import styles from "../../styles/Teas.module.css";
 
