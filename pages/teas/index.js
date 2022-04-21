@@ -20,7 +20,7 @@ const Teas = ({products}) => {
 }
 
 export const getStaticProps = async() =>{
-  const query = '*[_type == "tea"]'
+  const query = '*[_type == "tea"] { title, tagline, image, price, "id": _id, stock, slug, details }'
   const products = await sanityClient.fetch(query);
   return {
     props: {
