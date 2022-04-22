@@ -9,15 +9,6 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
   apiVersion: "2020-03-02",
 });
 
-const formatLineItems = (cartDetails) => {
-  const lineItems = []
-  for (const id in cartDetails) {
-    lineItems.push({ price: id, quantity: cartDetails[id].quantity })
-  }
-
-  return lineItems
-}
-
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
@@ -28,7 +19,7 @@ export default async function handler(req, res) {
       let sanityData = await sanityClient.fetch(query);
 
 
-      console.log(sanityData[3]);
+      console.log(sanityData[3]); 
       console.log('----------------------------')
       console.log(cartItems);
 
