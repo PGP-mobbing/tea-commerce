@@ -25,11 +25,17 @@ const TeaCard = ({ product }) => {
       </div>
       <div>
         <button
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            addItem(product);
-          }}
+        className="snipcart-add-item"
+        data-item-id={product.slug}
+        data-item-price={product.price}
+        data-item-url={`/products/${product.slug}`}
+        data-item-image={product.image.url}
+        data-item-name={product.title}
+          // onClick={(e) => {
+          //   e.preventDefault();
+          //   e.stopPropagation();
+          //   addItem(product);
+          // }}
         >
           Add to cart
         </button>

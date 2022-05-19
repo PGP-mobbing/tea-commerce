@@ -16,6 +16,14 @@ const Tea = ({ props }) => {
       {props.details.ingredients.map((ingredient, i) => <p key={i}>{ingredient}</p>
       )}
       <p>{props.details.caffeine} mcg </p>
+      <button
+        className="snipcart-add-item"
+        data-item-id={props.slug}
+        data-item-price={props.price}
+        data-item-url={`/teas/${props.slug}`}
+        data-item-image={urlFor(props.image).url()}
+        data-item-name={props.title}
+      >Add to cart</button>
     </div>
   );
 };
